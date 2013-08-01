@@ -25,6 +25,16 @@ function chekUDP(ipport){
     var msg = "how about you?";
     var message = new Buffer(msg);
     
+    if(ipport.length>0 ){
+        var idx = ipport.indexOf(":");
+        if(idx>0){
+            HOST = ipport.substring(0,idx);
+            PORT = ipport.substring(idx+1,ipport.length);
+            console.log("result:" + HOST + ":" + PORT)
+        }
+        
+    }
+    
     var client = dgram.createSocket("udp4");
     client.send(message,0,message.length,PORT,HOST,function(err,bytes){
         if(err) throw err;
