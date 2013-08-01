@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <p>Input IP&port(ex:999.999.999.999:10800)</p>
+    <form action="/" method="post">
+      <input type="text" name="ipport" />
+      <button type="submit">submit</button>
+    </form>
+    <p>testing at <%= ipport %></p>
+    <p>status ... (<%= status %>)</p>
+  </body>
+</html>
